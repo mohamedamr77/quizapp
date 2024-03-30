@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizapp/q2.dart';
-
 class Question1 extends StatefulWidget{
   @override
   State<Question1> createState() => _Question1State();
@@ -123,7 +122,8 @@ class _Question1State extends State<Question1> {
             endIndent: 52,
             indent: 52,
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,),
           ElevatedButton(
               onPressed:(){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> Question2(),
@@ -140,8 +140,11 @@ class _Question1State extends State<Question1> {
               )
             )
           ),
-          SizedBox(height: 30,),
-          Text("(1/6)"),
+          SizedBox(
+            height: 30,),
+          Text(
+              "(1/6)"
+          ),
         ],
       ),
     );

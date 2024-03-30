@@ -1,12 +1,32 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizapp/q2.dart';
+import 'package:quizapp/radiochoice.dart';
 class Question1 extends StatefulWidget{
+  const Question1({super.key});
   @override
   State<Question1> createState() => _Question1State();
 }
 class _Question1State extends State<Question1> {
   int _value=0;
+  int scoer=0;
+
+
+  List<Map<String,dynamic> >  questions=[
+    {
+
+      "title" : "question 1 ",
+      "answers" : ["answer1" , "answer2"]
+    } ,
+
+
+    {
+
+      "title" : "question 1 ",
+      "answers" : ["answer1" , "answer2" , "answers"]
+    } ,
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,68 +75,15 @@ class _Question1State extends State<Question1> {
             endIndent: 52,
             indent: 52,
           ),
-          Row(
-            textDirection: TextDirection.rtl,
-            children: [
-              Radio(
-                value: 1,
-                groupValue: _value,
-                onChanged:(value){
-                setState(() {
-                  _value=value!;
-                });
-              },
-              ),
-              Text("نصوص الأهرام"),
-            ],
-          ),
-          Row(
-            textDirection: TextDirection.rtl,
-            children: [
-              Radio(
-                value: 2,
-                groupValue: _value,
-                onChanged:(value){
-                  setState(() {
-                    _value=value!;
-                  });
-                },
-              ),
-              Text("نصوص التوابيت"),
-            ],
-          ),
-          Row(
-            textDirection: TextDirection.rtl,
-            children: [
-              Radio(
-                  value:3 ,
-                  groupValue: _value,
-                  onChanged:(value){
-                       setState(() {
-                              _value=value!;
-                       }
-                );
-              },
-              ),
-              Text("نصوص الأهرام"),
-            ],
-          ),
-          Row(
-            textDirection: TextDirection.rtl,
-            children: [
-              Radio(
-                value: 4,
-                groupValue: _value,
-                onChanged:(value){
-                setState(() {
-                  _value=value!;
-                });
-              },
 
-              ),
-              Text("نصوص الأهرام"),
-            ],
-          ),
+        ...questions[0]["answers"].map((answer){
+            //["answer1" , "answer2"]
+
+            rooooo(
+              title: answer,
+            );
+          }),
+
           Divider(
             color: Color(0xff006672) ,
             endIndent: 52,

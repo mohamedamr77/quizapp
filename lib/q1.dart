@@ -7,17 +7,12 @@ class Question1 extends StatefulWidget{
   State<Question1> createState() => _Question1State();
 }
 class _Question1State extends State<Question1> {
-  int _value=0;
-  int scoer=0;
-
 
   List<Map<String,dynamic> >  questions=[
     {
-
       "title" : "question 1 ",
       "answers" : ["answer1" , "answer2"]
     } ,
-
 
     {
 
@@ -75,14 +70,16 @@ class _Question1State extends State<Question1> {
             endIndent: 52,
             indent: 52,
           ),
-
-        ...questions[0]["answers"].map((answer){
-            //["answer1" , "answer2"]
-
-            rooooo(
-              title: answer,
-            );
-          }),
+          Choice(title: 'quiz 1',),
+          Choice(title: 'quiz 2',),
+          Choice(title: 'quiz 3',),
+        // ...questions[0]["answers"].map((answer){
+        //     //["answer1" , "answer2"]
+        //
+        //     rooooo(
+        //       title: answer,
+        //     );
+        //   }),
 
           Divider(
             color: Color(0xff006672) ,

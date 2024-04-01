@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class rooooo extends StatefulWidget{
+class Choice extends StatefulWidget{
   final String title;
-  rooooo({required this.title});
+   Choice({super.key, required this.title});
   @override
-  State<rooooo> createState() => _roooooState();
+  State<Choice> createState() => _ChoiceState();
 }
-
-class _roooooState extends State<rooooo> {
+class _ChoiceState extends State<Choice> {
   int _value=0;
   int score=0;
   @override

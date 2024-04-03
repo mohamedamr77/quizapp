@@ -2,24 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class RadioChoice extends StatefulWidget{
   String text;
-   RadioChoice({super.key,required this.text});
+  int groupValue;
+  int valueRdio;
+   RadioChoice({super.key,required this.text,required this.groupValue,required this.valueRdio });
   @override
   State<RadioChoice> createState() => _RadioChoiceState();
 }
 class _RadioChoiceState extends State<RadioChoice> {
-  int _value=0;
-
   @override
   Widget build(BuildContext context) {
     return  Row(
       textDirection: TextDirection.rtl,
       children: [
         Radio(
-          value: 1,
-          groupValue: _value,
+          value: widget.valueRdio,
+          groupValue: widget.groupValue,
           onChanged:(value){
             setState(() {
-              _value=value!;
+              widget.groupValue=value!;
             });
           },
         ),

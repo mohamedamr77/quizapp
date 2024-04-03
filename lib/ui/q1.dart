@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/cool/colorcool.dart';
-import 'package:quizapp/ui/q2.dart';
 import 'package:quizapp/widget/question.dart';
 import 'package:quizapp/widget/divider.dart';
 import 'package:quizapp/widget/radiochoice.dart';
@@ -17,18 +16,23 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Map<String,dynamic> > questions =[
 
     {
-      "title" : "question 1 ",
-      "answers" : ["answer1" , "answer2"]
+      "title" : " : تقييم امتاحانات دكتوره عايده ",
+      "answers" : ["وحشه" , "وحشه اوى " , "مش هجاوب عشان احافظ على صيامى "]
     } ,
 
     {
-      "title" : "question 2 ",
-      "answers" : ["answer1" , "answer2" , "answers3"]
+      "title" : " : تقييم دكتور مصطفى العشرى ",
+      "answers" : ["جميل" , "عظمه" , "فوق عظمه " , "فوق التقييم" ]
     } ,
 
     {
-      "title" : "question 3 ",
-      "answers" : ["answer1" , "answer2" , "answers3"]
+      "title" : "تقييم امتحانات دكتوره امنيه  ",
+      "answers" : ["ربنا يخليها لينا يارب " , "زى الفل " ,]
+    } ,
+
+    {
+      "title" : "  هل انا شخص مميز بالنسبالك ",
+      "answers" : ["ايوه " , "اكيد طبعا " ,]
     } ,
   ];
 
@@ -63,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
           DividerLine(),
 
           for(String answer in questionAnswers)
-          RadioChoice(text: answer),
+          RadioChoice(text: answer, groupValue: 1, valueRdio: 0,),
 
           DividerLine(),
 
@@ -72,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
             pageNumber++;
             plusQuestionIndex();
           },
-              text: 'التالى'
+              text: pageNumber==questions.length ? "ارسال" :"التالى ",
           ),
 
           SizedBox(

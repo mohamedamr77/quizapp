@@ -21,7 +21,7 @@ class CotainerAsAppBar extends StatelessWidget{
           "Quiz App",
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.white,
+            color: ColorStatic.white,
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),

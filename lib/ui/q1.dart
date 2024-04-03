@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:quizapp/cool/colorcool.dart';
 import 'package:quizapp/ui/q2.dart';
-import 'package:quizapp/widget/numpage.dart';
 import 'package:quizapp/widget/question.dart';
 import 'package:quizapp/widget/divider.dart';
 import 'package:quizapp/widget/radiochoice.dart';
 import '../widget/containerasappbar.dart';
 import '../widget/elevatedButton.dart';
 int pageNumber=1;
-class Question1 extends StatefulWidget{
-   Question1({super.key});
+class HomeScreen extends StatefulWidget{
+   HomeScreen({super.key});
   @override
-  State<Question1> createState() => _Question1State();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
-class _Question1State extends State<Question1> {
+class _HomeScreenState extends State<HomeScreen> {
 
   List<Map<String,dynamic> > questions =[
 

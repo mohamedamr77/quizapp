@@ -1,4 +1,9 @@
 //any file begin with . (تبع  فلاتر )
+pubsbeck .yaml =>بنحط فيه اى حاجه خارجيه من برا البروجكت سواء من على الجهاز او على النت
+pubsbeck .lock => بيترجم الحاجات الى بتعملها فى yaml
+
+  اول لما البروجكت يشتغل بيروح عند فولدر   lib و بيدور على   main
+
 اى حاجه بنطلبها من الجهاز لازم نطلبها من المستخدم الاول //
 لو عايز اضيف اى حاجه  متعلقه ياندرويد بضيفها فى فايل اندرويد//
 // debendence =>بنجط الحاجات الى بنحتاجها وقت الشغل
@@ -7,3 +12,21 @@
 // director =folder =moduel
 // view => Screen
 // how to show dialog
+// appBar(flexiblespace)
+    // ...questions[0]["answers"].map((answer){
+        //     //["answer1" , "answer2"]
+        //
+        //     rooooo(
+        //       title: answer,
+        //     );
+        //   }),
+List<Map<String,dynamic> >  questions=[
+  {
+    "title" : "question 1 ",
+    "answers" : ["answer1" , "answer2"]
+  } ,
+  {
+    "title" : "question 1 ",
+    "answers" : ["answer1" , "answer2" , "answers"]
+  } ,
+];

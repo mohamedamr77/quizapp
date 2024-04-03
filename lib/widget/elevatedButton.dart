@@ -4,7 +4,7 @@ import '../cool/colorcool.dart';
 
 ElevatedButton Button({required final void Function()? onPressed , required String text }){
   return ElevatedButton(
-      onPressed:onPressed ,
+      onPressed: onPressed ,
       child: Text(text),
       style: ElevatedButton.styleFrom(
           backgroundColor:  ColorStatic.primaryColor,

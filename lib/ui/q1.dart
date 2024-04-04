@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/widget/resultdialog.dart';
 import 'package:quizapp/widget/question.dart';
 import 'package:quizapp/widget/divider.dart';
 import 'package:quizapp/widget/radiochoice.dart';
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if(pageNumber-1==questions.length){
               showDialog(
                   context: context,
-                  builder: (context) => Dialog(),
+                  builder: (context) => ResultDialog(),
               );
             }
           },

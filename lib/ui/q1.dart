@@ -20,24 +20,28 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Map<String,dynamic> > questions =[
     {
-      "title" : " : تقييم امتحانات دكتوره عايده ",
-      "answers" : ["وحشه" , "وحشه اوى " , "مش هجاوب عشان احافظ على صيامى "],
-      "correctAnswer":"وحشه",
+      "title" : "كم كان عمر النبي محمد صلى الله عليه وسلم عندما توفيت أمه ؟ ",
+      "answers" : [" 3 سنوات" , " 4 سنوات  " , "5 سنوات","6 سنوات  "],
+      "correctAnswer":"5 سنوات",
     } ,
 
     {
-      "title" : " : تقييم دكتور مصطفى العشرى ",
-      "answers" : ["جميل" , "عظمه" , "فوق عظمه " , "فوق التقييم" ]
+      "title" : " كم عدد التكبيرات في الركعة الأولى في صلاة العيد؟ ",
+      "answers" : ["ستة" , "سبعة" , " تسعة " , "خمسة" ],
+      "correctAnswer":"سبعة",
     } ,
 
     {
-      "title" : "تقييم امتحانات دكتوره امنيه  ",
-      "answers" : ["ربنا يخليها لينا يارب " , "زى الفل " ,]
+      "title" : " ما هي أطول سورة في القرآن الكريم؟",
+      "answers" : [" سورة البقره" , "سورة النساء " ,"سورة المائده","سورة الكهف"],
+      "correctAnswer":"سورة البقره",
+
     } ,
 
     {
-      "title" : "  هل انا شخص مميز بالنسبالك ",
-      "answers" : ["ايوه " , "اكيد طبعا " ,]
+      "title" : "ما السورة التي ختمت باسم وقت من أوقات الصلاة؟",
+      "answers" : [" سورة القدر" , "سورة البلد " ,"سورة الأعلى","سورة الفجر"],
+      "correctAnswer":"سورة الأعلى",
     } ,
   ];
 
@@ -85,7 +89,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   context: context,
                   builder: (context) => ResultDialog(),
               );
+              pageNumber=1;
             }
+
           },
               text: pageNumber==questions.length ? TextStatic.submitButton :TextStatic.continueButton,
           ),

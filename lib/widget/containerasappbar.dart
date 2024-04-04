@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../cool/colorcool.dart';
+import '../core/TextCore.dart';
+import '../core/colorcore.dart';
 
 class CotainerAsAppBar extends StatelessWidget{
   @override
@@ -17,8 +18,7 @@ class CotainerAsAppBar extends StatelessWidget{
           )
       ),
       child: const Center(
-        child: Text(
-          "Quiz App",
+        child: Text(TextStatic.appBarText,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: ColorStatic.white,

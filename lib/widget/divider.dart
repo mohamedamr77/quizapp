@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../cool/colorcool.dart';
+import '../core/colorcore.dart';
 
 Divider DividerLine(){
   return  const Divider(

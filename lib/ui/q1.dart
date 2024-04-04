@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/cool/colorcool.dart';
 import 'package:quizapp/widget/question.dart';
 import 'package:quizapp/widget/divider.dart';
 import 'package:quizapp/widget/radiochoice.dart';
+import '../core/TextCore.dart';
+import '../core/colorcore.dart';
 import '../widget/containerasappbar.dart';
 import '../widget/elevatedButton.dart';
+
 int pageNumber=1;
+
 class HomeScreen extends StatefulWidget{
    HomeScreen({super.key});
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
 
   List<Map<String,dynamic> > questions =[
@@ -39,7 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int questionIndex  = 0  ;
 
   plusQuestionIndex() {
-
     if(questionIndex <questions.length-1 ) {
       questionIndex++;
       setState(() {
@@ -47,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     String questionTitle = questions[questionIndex]['title'];
@@ -76,113 +80,16 @@ class _HomeScreenState extends State<HomeScreen> {
             pageNumber++;
             plusQuestionIndex();
             if(pageNumber-1==questions.length){
-              showDialog(context: context, builder: (context){
-                return AlertDialog(
-                 content: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   mainAxisSize: MainAxisSize.min,
-                   children: [
-                     Padding(
-                       padding: const EdgeInsets.only(
-                         left: 10,
-                         right: 10,
-                         top: 25,
-                         bottom: 15,
-                       ),
-                       child: Container(
-                         height: 114,
-                         width: 234,
-                         decoration: BoxDecoration(
-                           color: ColorStatic.colorContentShowDialog,
-                           borderRadius: BorderRadius.circular(10),
-                           border: Border.all(
-                             color: Color(0xff006672),
-                             width: 0.5,
-                           )
-                         ),
-                         child: Column(
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                             Text("النتيجة",
-                             style: TextStyle(
-                               color: Color(0xff6E7070),
-                               fontSize: 16,
-                             ),
-                             ),
-                             SizedBox(
-                               height: 10,
-                             ) ,
-                             Text("6/6",
-                             style: TextStyle(
-                               fontSize: 18,
-                               color: Color(0xff006672)
-                             ),
-                             ),
-                           ],
-                         ),
-                       ),
-                     ),
-                    SizedBox(height: 20,),
-                     Container(
-                       width: 234,
-                       height: 40,
-                       decoration: BoxDecoration(
-                           color: ColorStatic.colorContentShowDialog,
-                           borderRadius: BorderRadius.circular(8),
-                         border: Border.all(
-                           color: Color(0xff006672),
-                           width: 1,
-                         )
-                       ),
-                       child: Center(
-                         child: Text("راجع اجاباتك ",
-                         style: TextStyle(
-                           color: ColorStatic.primaryColor,
-                           fontSize: 14,
-                           fontWeight: FontWeight.w700,
-                         ),
-                         ),
-                       ),
-                     ),
-                     SizedBox(height: 20,),
-                     GestureDetector(
-                       child: Container(
-                         width: 234,
-                         height: 40,
-                         decoration: BoxDecoration(
-                             color: ColorStatic.primaryColor,
-                             borderRadius: BorderRadius.circular(8),
-                             border: Border.all(
-                               color: const Color(0xff006672),
-                               width: 1,
-                             )
-                         ),
-                         child: Center(
-                           child: Text("اعادة الأختبار ",
-                             style: TextStyle(
-                               color: ColorStatic.white,
-                               fontSize: 14,
-                               fontWeight: FontWeight.w700,
-                             ),
-                           ),
-                         ),
-                       ),
-                       onTap: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-                         pageNumber=1;
-                       },
-                     ),
-                   ],
-                 ),
-                );
-              });
+              showDialog(
+                  context: context,
+                  builder: (context) => Dialog(),
+              );
             }
           },
-              text: pageNumber==questions.length ? "ارسال" :"التالى ",
+              text: pageNumber==questions.length ? TextStatic.submitButton :TextStatic.continueButton,
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 30,),
 
           Text(

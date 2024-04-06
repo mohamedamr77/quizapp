@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'dart:ui';
 import '../../core/colorcore.dart';
 
-Divider DividerLine(){
-  return  const Divider(
+class DividerLine extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+  return   Divider(
     color: ColorStatic.primaryColor ,
     endIndent: 52,
     indent: 52,
-  );
+    );
+  }
+
 }

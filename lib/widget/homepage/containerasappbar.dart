@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../core/TextCore.dart';
-import '../core/colorcore.dart';
+import '../../core/TextCore.dart';
+import '../../core/colorcore.dart';
 
 class CotainerAsAppBar extends StatelessWidget{
   @override
@@ -21,6 +21,7 @@ class CotainerAsAppBar extends StatelessWidget{
         child: Text(TextStatic.appBarText,
           textAlign: TextAlign.center,
           style: TextStyle(
+            fontFamily: "Almarai",
             color: ColorStatic.white,
             fontWeight: FontWeight.bold,
             fontSize: 25,

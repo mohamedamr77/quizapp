@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import '../core/TextCore.dart';
-import '../core/colorcore.dart';
+import 'package:quizapp/widget/quiz_data..dart';
+import 'package:quizapp/widget/quiz_variables.dart';
+import '../../core/TextCore.dart';
+import '../../core/colorcore.dart';
 
 class DisplayScoer extends StatelessWidget{
-  const DisplayScoer({super.key});
+  final int score;
+  final int length;
+   DisplayScoer({super.key,required this.score,required this.length});
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +29,13 @@ class DisplayScoer extends StatelessWidget{
               width: 0.5,
             )
         ),
-        child:  const Column(
+        child:   Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
             Text(TextStatic.resultTextInShowDialog,
               style: TextStyle(
+                fontFamily: "Almarai",
                 color: ColorStatic.colorResultTextInShowDialog,
                 fontSize: 16,
               ),
@@ -38,10 +43,11 @@ class DisplayScoer extends StatelessWidget{
 
             SizedBox(
               height: 10,
-            ) ,
+            ),
 
-            Text("4/4",
+            Text("${score}/${length}",
               style: TextStyle(
+                fontFamily: "Almarai",
                 fontSize: 18,
                 color:ColorStatic.primaryColor,
               ),

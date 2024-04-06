@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../core/colorcore.dart';
+import '../../core/colorcore.dart';
 
 ElevatedButton Button({required final void Function()? onPressed , required String text }){
   return ElevatedButton(

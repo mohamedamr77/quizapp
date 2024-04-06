@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class RadioChoice extends StatefulWidget{
-  String text;
-  int groupValue;
-  int valueRdio;
-   RadioChoice({super.key,required this.text,required this.groupValue,required this.valueRdio });
+  String textChoice;
+  dynamic groupValue;
+   dynamic valueRdio;
+   void Function(dynamic)? onChanged;
+   RadioChoice({super.key,required this.textChoice,required this.groupValue,required this.valueRdio,required this.onChanged });
   @override
   State<RadioChoice> createState() => _RadioChoiceState();
 }
@@ -17,13 +18,15 @@ class _RadioChoiceState extends State<RadioChoice> {
         Radio(
           value: widget.valueRdio,
           groupValue: widget.groupValue,
-          onChanged:(value){
-            setState(() {
-              widget.groupValue=value!;
-            });
-          },
+          onChanged: widget.onChanged,
         ),
-        Text(widget.text),
+        Text(widget.textChoice,
+        style: TextStyle(
+          fontFamily: "Almarai",
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
+        ),
       ],
     );
   }

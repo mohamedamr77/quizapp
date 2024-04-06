@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import '../../core/TextCore.dart';
 import '../../core/colorcore.dart';
+import '../../core/fontcore.dart';
 
 class RepetitionAnswerButton extends StatelessWidget{
   const RepetitionAnswerButton({super.key});
@@ -20,7 +21,7 @@ class RepetitionAnswerButton extends StatelessWidget{
       child: const Center(
         child: Text(TextStatic.examREPETITONTextInShowDialog,
           style: TextStyle(
-            fontFamily: "Almarai",
+            fontFamily: FontFamily.almaraiFont,
             color: ColorStatic.white,
             fontSize: 14,
             fontWeight: FontWeight.w700,

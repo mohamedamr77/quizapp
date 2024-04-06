@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
       if(questions[questionIndex]["selectAnswer"]!=null){
         questionNumber++;
         questionIndex++;
-        print(score);// 0    1     2
         setState(() {
         });
       }
@@ -34,13 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  // void handleAnswer(String selectedAnswer) {
-  //   questions[questionIndex]['selectAnswer'] = selectedAnswer;
-  //   setState(() {
-  //
-  //   });
-  // }
-
+  @override
   void initState() {
     super.initState();
     if (widget.resetQuestions) {
@@ -88,6 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
 
       body: Column(
+
         textDirection: TextDirection.rtl,
         children: [
 
@@ -97,7 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 40,
           ),
 
-          QuestionText(text: questionTitle),
+          QuestionText(
+            text: questionTitle,
+          ),
 
           DividerLine(),
 
@@ -129,6 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           Text("($questionNumber/${questions.length})"),
+
         ],
       ),
     );

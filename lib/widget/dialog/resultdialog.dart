@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/TextCore.dart';
 import '../../core/colorcore.dart';
+import '../../core/fontcore.dart';
 import 'buttoncheckanswerinshowdialog.dart';
 import 'buttonexamrepetitioninshowdialog.dart';
 import 'containerDisplayResult.dart';
@@ -41,9 +42,9 @@ class ResultDialog extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            Text(TextStatic.resultTextInShowDialog,
+            const Text(TextStatic.resultTextInShowDialog,
               style: TextStyle(
-                fontFamily: "Almarai",
+                fontFamily:FontFamily.almaraiFont,
                 color: ColorStatic.colorResultTextInShowDialog,
                 fontSize: 16,
               ),

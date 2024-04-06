@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import '../../core/TextCore.dart';
 import '../../core/colorcore.dart';
+import '../../core/fontcore.dart';
 
 class CheckAnswerButton extends StatelessWidget{
+  const CheckAnswerButton({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +21,7 @@ class CheckAnswerButton extends StatelessWidget{
       child: const Center(
         child: Text(TextStatic.checkAnswerTextInShowDialog,
           style: TextStyle(
-            fontFamily: "Almarai",
+            fontFamily: FontFamily.almaraiFont,
             color: ColorStatic.primaryColor,
             fontSize: 14,
             fontWeight: FontWeight.w700,

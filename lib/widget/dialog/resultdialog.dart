@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/ui/check_answer.dart';
 import '../../core/TextCore.dart';
 import '../../core/colorcore.dart';
 import '../../core/fontcore.dart';
@@ -20,55 +21,59 @@ class ResultDialog extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-      Padding(
-      padding: const EdgeInsets.only(
-        left: 10,
-        right: 10,
-        top: 25,
-        bottom: 15,
-      ),
-      child: Container(
-        height: 114,
-        width: 234,
-        decoration: BoxDecoration(
-            color: ColorStatic.colorGroundContainerInShowDialog,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: ColorStatic.primaryColor,
-              width: 0.5,
-            )
-        ),
-        child:   Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 10,
+              right: 10,
+              top: 25,
+              bottom: 15,
+            ),
+            child: Container(
+              height: 114,
+              width: 234,
+              decoration: BoxDecoration(
+                  color: ColorStatic.colorGroundContainerInShowDialog,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: ColorStatic.primaryColor,
+                    width: 0.5,
+                  )
+              ),
+              child:   Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
 
-            const Text(TextStatic.resultTextInShowDialog,
-              style: TextStyle(
-                fontFamily:FontFamily.almaraiFont,
-                color: ColorStatic.colorResultTextInShowDialog,
-                fontSize: 16,
+                  const Text(TextStatic.resultTextInShowDialog,
+                    style: TextStyle(
+                      fontFamily:FontFamily.almaraiFont,
+                      color: ColorStatic.colorResultTextInShowDialog,
+                      fontSize: 16,
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  Text("${scorePass}/${lengthPass}",
+                    style: TextStyle(
+                      fontFamily: "Almarai",
+                      fontSize: 18,
+                      color:ColorStatic.primaryColor,
+                    ),
+                  ),
+                ],
               ),
             ),
-
-            SizedBox(
-              height: 10,
-            ),
-
-            Text("${scorePass}/${lengthPass}",
-              style: TextStyle(
-                fontFamily: "Almarai",
-                fontSize: 18,
-                color:ColorStatic.primaryColor,
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
+          ),
           const SizedBox(
               height: 20),
           GestureDetector(
-              onTap: onTapCheckAnswerButton,
+              onTap: (){
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>CheckAnswerScreen()
+                )
+                );
+              },
               child: CheckAnswerButton()),
           const SizedBox(
               height: 20),

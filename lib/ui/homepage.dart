@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:quizapp/widget/dialog/resultdialog.dart';
 import 'package:quizapp/widget/homepage/questiontext.dart';
@@ -6,7 +7,7 @@ import 'package:quizapp/widget/homepage/radiochoice.dart';
 import '../core/TextCore.dart';
 import '../widget/homepage/containerasappbar.dart';
 import '../widget/homepage/elevatedButton.dart';
-import '../widget/quiz_data..dart';
+import '../widget/list_quiz_data..dart';
 import '../widget/quiz_variables.dart';
 
 
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void plusQuestionIndex() {
     if (questionIndex < questions.length - 1) {
-      if(questions[questionIndex]["selectAnswer"]!=null){
+      if(questions[questionIndex].selectedAnswer!=null){
         questionNumber++;
         questionIndex++;
         setState(() {
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           score=0;
           questionNumber=1;
           for (int i = 0; i < questions.length; i++) {
-            questions[i]['selectAnswer'] = null;
+            questions[i].selectedAnswer = null;
           }
           Navigator.pop(context);
           setState(() {});
@@ -66,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   checkScore( ) {
     for(int i   = 0 ;  i<questions.length ; i++ ) {
-      if(questions[i]["correctAnswer"]== questions[i]["selectAnswer"] ) {
+      if(questions[i].correctAnswer== questions[i].selectedAnswer ) {
         score += 1 ;
       }
       setState(() {});
@@ -75,8 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String questionTitle = questions[questionIndex]['title'];
-    List<String> questionAnswers = questions[questionIndex]['answers'];
+    String questionTitle = questions[questionIndex].title;
+    List<String> questionAnswers = questions[questionIndex].answers;
 
     return Scaffold(
 
@@ -85,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
         textDirection: TextDirection.rtl,
         children: [
 
-          CotainerAsAppBar(),
+          CotainerAsAppBar(text: 'Quiz App',),
 
           const SizedBox(
             height: 40,
@@ -100,10 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
           for (String answer in questionAnswers)
             RadioChoice(
               textChoice: answer,
-              groupValue: questions[questionIndex]['selectAnswer'],
+              groupValue: questions[questionIndex].selectedAnswer,
               valueRdio: answer,
               onChanged: (value){
-                questions[questionIndex]["selectAnswer"]= value;
+                questions[questionIndex].selectedAnswer= value;
                 setState(() {});
               },
             ), //correct answer
@@ -115,9 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
               plusQuestionIndex();
             },
             text: questionNumber == questions.length ?
-                  TextStatic.submitButton
+            TextStatic.submitButton
                 :
-                   TextStatic.continueButton,
+            TextStatic.continueButton,
           ),
 
           const SizedBox(

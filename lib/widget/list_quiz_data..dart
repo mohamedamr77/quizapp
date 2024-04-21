@@ -13,27 +13,30 @@ List<QuestionModel> questions = [
 
   QuestionModel(
     title: " كم عدد التكبيرات في الركعة الأولى في صلاة العيد؟ ",
-    answers: ["ستة", "سبعة", " تسعة ", "خمسة"],
+    answers: ["ستة", "سبعة", "تسعه", "خمسة"],
     correctAnswer : "سبعة",
     selectedAnswer: null,
   ),
+
   QuestionModel(
     title: " ما هي أطول سورة في القرآن الكريم؟",
-    answers: [" سورة البقره", "سورة النساء ", "سورة المائده", "سورة الكهف"],
+    answers: ["سورة البقره", "سورة النساء ", "سورة المائده", "سورة الكهف"],
     correctAnswer: "سورة البقره",
     selectedAnswer: null,
   ),
+
   QuestionModel(
     title: "ما السورة التي ختمت باسم وقت من أوقات الصلاة؟",
     answers: [" سورة القدر", "سورة البلد ", "سورة الأعلى", "سورة الفجر"],
     correctAnswer: "سورة الأعلى",
     selectedAnswer: null,
   ),
+
   QuestionModel(
     title: " كم عدد التكبيرات في الركعة الأولى في صلاة العيد؟ ",
-    answers: ["ستة", "سبعة", " تسعة ", "خمسة"],
-    correctAnswer: "سبعة",
+    answers: ["ستة", "سبعة", "تسعه", "خمسة"],
+    correctAnswer : "سبعة",
     selectedAnswer: null,
-  )
+  ),
 
 ];

@@ -47,31 +47,36 @@ class _CheckAnswerItemState extends State<CheckAnswerItem> {
         ),
         SizedBox(height: 14),
         DividerLine(),
-        Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-          ),
-          child: Wrap(
-            textDirection: TextDirection.rtl,
-            children: [
-              ...questions[widget.index].answers.map((questionAnswer) => SizedBox
-                (
-                width: MediaQuery.of(context).size.width*0.40,
-                child: Text(
-                    questionAnswer,
-
-                  style: TextStyle (
-                     color: questionAnswer==questions[widget.index].correctAnswer?
-                         Colors.green
-                         :questionAnswer!=questions[widget.index].correctAnswer && questionAnswer == questions[widget.index].selectedAnswer?
-                         Colors.red
-                         :Colors.black
-                  ),
+        Wrap(
+          textDirection: TextDirection.rtl,
+          children: [
+            ...questions[widget.index].answers.map((questionAnswer) => SizedBox
+              (
+              width: MediaQuery.of(context).size.width/2-40,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 22,
                 ),
-              ))
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      questionAnswer,
+                      style: TextStyle (
+                          color: questionAnswer==questions[widget.index].correctAnswer?
+                          Colors.green
+                              :questionAnswer!=questions[widget.index].correctAnswer && questionAnswer == questions[widget.index].selectedAnswer?
+                          Colors.red
+                              :Colors.black
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ))
 
-            ],
-          ),
+          ],
         ),
 
         SizedBox(height: 20),

@@ -10,6 +10,7 @@ List<QuestionModel> questions = [
 
     selectedAnswer:null,
   ),
+
   QuestionModel(
     title: " كم عدد التكبيرات في الركعة الأولى في صلاة العيد؟ ",
     answers: ["ستة", "سبعة", " تسعة ", "خمسة"],
@@ -34,6 +35,5 @@ List<QuestionModel> questions = [
     correctAnswer: "سبعة",
     selectedAnswer: null,
   )
-
 
 ];

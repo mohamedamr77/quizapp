@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quizapp/widget/homepage/divider.dart';
-import 'package:quizapp/widget/homepage/questiontext.dart';
-
 import '../widget/checkanswerwidget/check_answer_item.dart';
 import '../widget/homepage/containerasappbar.dart';
 import '../widget/list_quiz_data..dart';
@@ -24,7 +21,7 @@ class _CheckAnswerScreenState extends State<CheckAnswerScreen> {
          Expanded(
            child: ListView.builder(
              itemBuilder:(context, index) => CheckAnswerItem(
-               index: index+1,
+               index: index,
                question: questions[index].title,
              ),
               itemCount: questions.length,

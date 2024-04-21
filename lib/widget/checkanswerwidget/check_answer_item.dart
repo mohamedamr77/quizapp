@@ -15,7 +15,6 @@ class CheckAnswerItem extends StatefulWidget {
 class _CheckAnswerItemState extends State<CheckAnswerItem> {
   @override
   Widget build(BuildContext context) {
-    List<String> questionAnswers = questions[widget.index - 1].answers;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -55,47 +54,22 @@ class _CheckAnswerItemState extends State<CheckAnswerItem> {
           child: Wrap(
             textDirection: TextDirection.rtl,
             children: [
-              for (var i = 0; i < questionAnswers.length; i += 2)
-                Row(
-                  // crossAxisAlignment: CrossAxisAlignment.end,
-                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2 - 40,
-                      child: Text(
-                        questionAnswers[i],
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: questions[i].correctAnswer==questions[i].selectedAnswer?
-                          Colors.green: Colors.black,
-                          fontSize: 14,
-                          fontFamily: "Almarai-Regular.ttf",
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 20),
-                    if (i + 1 < questionAnswers.length)
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 2 - 40,
-                        child: Text(
-                          questionAnswers[i + 1],
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color:questions[i+1].correctAnswer==questions[i+1].selectedAnswer?
-                            Colors.green: Colors.black,
-                            fontSize: 14,
-                            fontFamily: "Almarai-Regular.ttf",
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-                  ],
+              ...questions[widget.index].answers.map((questionAnswer) => SizedBox
+                (
+                width: MediaQuery.of(context).size.width*0.40,
+                child: Text(
+                    questionAnswer,
+
+                  style: TextStyle (
+                     color: questionAnswer==questions[widget.index].correctAnswer?
+                         Colors.green
+                         :questionAnswer!=questions[widget.index].correctAnswer && questionAnswer == questions[widget.index].selectedAnswer?
+                         Colors.red
+                         :Colors.black
+                  ),
                 ),
+              ))
+
             ],
           ),
         ),

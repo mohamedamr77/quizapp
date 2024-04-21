@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Column(
         children: [
@@ -32,7 +33,6 @@ class _SplashScreenState extends State<SplashScreen> {
           Align(
             alignment: Alignment.topLeft,
             child: Image.asset(ImageApp.upImage ,
-              height: 256,
             ),
           ),
           Spacer(),
@@ -46,11 +46,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Spacer(),
+
           Align(
             alignment: Alignment.bottomRight,
             child: Image.asset(ImageApp.downImage,
-              height: 256,
-
             ),
           ),
 

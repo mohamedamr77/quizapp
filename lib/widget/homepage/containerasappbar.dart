@@ -18,7 +18,7 @@ class CotainerAsAppBar extends StatelessWidget{
         width: widthScreen,
         height:heightScreen*0.129,
         decoration: const BoxDecoration(
-            color: ColorStatic.primaryColor,
+            color: ColorApp.primaryColor,
             borderRadius: BorderRadius.only(
               bottomRight: Radius.circular(30),
               bottomLeft: Radius.circular(30),
@@ -29,7 +29,7 @@ class CotainerAsAppBar extends StatelessWidget{
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: FontFamily.almaraiFont,
-              color: ColorStatic.white,
+              color: ColorApp.white,
               fontWeight: FontWeight.bold,
               fontSize: 25,
             ),

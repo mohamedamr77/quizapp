@@ -12,7 +12,7 @@ class QuestionText extends StatelessWidget {
       '''$text ''',
       textAlign: TextAlign.right,
       style: const TextStyle(
-        color:  ColorStatic.primaryColor,
+        color:  ColorApp.primaryColor,
         fontSize: 14,
         fontFamily: FontFamily.almaraiFont,
         fontWeight: FontWeight.w700,

@@ -5,7 +5,7 @@ ElevatedButton Button({required final void Function()? onPressed , required Stri
   return ElevatedButton(
       onPressed: onPressed ,
       style: ElevatedButton.styleFrom(
-          backgroundColor:  ColorStatic.primaryColor,
+          backgroundColor:  ColorApp.primaryColor,
           minimumSize: const Size(110, 40),
           elevation: 0,
           shape: const RoundedRectangleBorder(

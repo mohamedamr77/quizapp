@@ -11,10 +11,10 @@ class CheckAnswerButton extends StatelessWidget{
       width: 234,
       height: 40,
       decoration: BoxDecoration(
-          color: ColorStatic.colorGroundContainerInShowDialog,
+          color: ColorApp.colorGroundContainerInShowDialog,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: ColorStatic.primaryColor,
+            color: ColorApp.primaryColor,
             width: 1,
           )
       ),
@@ -22,7 +22,7 @@ class CheckAnswerButton extends StatelessWidget{
         child: Text(TextStatic.checkAnswerTextInShowDialog,
           style: TextStyle(
             fontFamily: FontFamily.almaraiFont,
-            color: ColorStatic.primaryColor,
+            color: ColorApp.primaryColor,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),

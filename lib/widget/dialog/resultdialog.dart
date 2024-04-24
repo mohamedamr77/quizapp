@@ -15,74 +15,79 @@ class ResultDialog extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      content: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 10,
-              right: 10,
-              top: 25,
-              bottom: 15,
+    return WillPopScope(
+      onWillPop: () async{
+        return false;
+      },
+      child: AlertDialog(
+        content: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 25,
+                bottom: 15,
+              ),
+              child: Container(
+                height: 114,
+                width: 234,
+                decoration: BoxDecoration(
+                    color: ColorApp.colorGroundContainerInShowDialog,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: ColorApp.primaryColor,
+                      width: 0.5,
+                    )
+                ),
+                child:   Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+
+                    const Text(TextStatic.resultTextInShowDialog,
+                      style: TextStyle(
+                        fontFamily:FontFamily.almaraiFont,
+                        color: ColorApp.colorResultTextInShowDialog,
+                        fontSize: 16,
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+
+                    Text("${scorePass}/${lengthPass}",
+                      style: TextStyle(
+                        fontFamily: "Almarai",
+                        fontSize: 18,
+                        color:ColorApp.primaryColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            child: Container(
-              height: 114,
-              width: 234,
-              decoration: BoxDecoration(
-                  color: ColorStatic.colorGroundContainerInShowDialog,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: ColorStatic.primaryColor,
-                    width: 0.5,
+            const SizedBox(
+                height: 20),
+            GestureDetector(
+                onTap: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>CheckAnswerScreen()
                   )
-              ),
-              child:   Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-
-                  const Text(TextStatic.resultTextInShowDialog,
-                    style: TextStyle(
-                      fontFamily:FontFamily.almaraiFont,
-                      color: ColorStatic.colorResultTextInShowDialog,
-                      fontSize: 16,
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 10,
-                  ),
-
-                  Text("${scorePass}/${lengthPass}",
-                    style: TextStyle(
-                      fontFamily: "Almarai",
-                      fontSize: 18,
-                      color:ColorStatic.primaryColor,
-                    ),
-                  ),
-                ],
-              ),
+                  );
+                },
+                child: CheckAnswerButton()),
+            const SizedBox(
+                height: 20),
+            GestureDetector(
+              onTap: onTapCheckAnswerButton,
+              child: RepetitionAnswerButton(),
             ),
-          ),
-          const SizedBox(
-              height: 20),
-          GestureDetector(
-              onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>CheckAnswerScreen()
-                )
-                );
-              },
-              child: CheckAnswerButton()),
-          const SizedBox(
-              height: 20),
-          GestureDetector(
-            onTap: onTapCheckAnswerButton,
-            child: RepetitionAnswerButton(),
-          ),
-          //5-4
-        ],
+            //5-4
+          ],
+        ),
       ),
     );
   }

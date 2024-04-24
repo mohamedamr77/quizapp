@@ -11,10 +11,10 @@ class RepetitionAnswerButton extends StatelessWidget{
       width: 234,
       height: 40,
       decoration: BoxDecoration(
-          color: ColorStatic.primaryColor,
+          color: ColorApp.primaryColor,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color:  ColorStatic.primaryColor,
+            color:  ColorApp.primaryColor,
             width: 1,
           )
       ),
@@ -22,7 +22,7 @@ class RepetitionAnswerButton extends StatelessWidget{
         child: Text(TextStatic.examREPETITONTextInShowDialog,
           style: TextStyle(
             fontFamily: FontFamily.almaraiFont,
-            color: ColorStatic.white,
+            color: ColorApp.white,
             fontSize: 14,
             fontWeight: FontWeight.w700,
           ),

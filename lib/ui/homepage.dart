@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:quizapp/ui/check_answer.dart';
 import 'package:quizapp/widget/dialog/resultdialog.dart';
 import 'package:quizapp/widget/homepage/questiontext.dart';
 import 'package:quizapp/widget/homepage/divider.dart';
@@ -20,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   void plusQuestionIndex() {
-    if (questionIndex < questions.length - 1) {
+      if (questionIndex < questions.length - 1) {
       if(questions[questionIndex].selectedAnswer!=null){
         questionNumber++;
         questionIndex++;
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       }
     }
-    else{
+    else if(questions[questionIndex].selectedAnswer!=null){
       checkScore();
       displayDialog();
     }
@@ -40,7 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
     if (widget.resetQuestions) {
       setState(() {
         questionIndex = 0; // Reset question index to 0
-        questionNumber = 1; // Reset page number
+        questionNumber = 1;
+        for (int i = 0; i < questions.length; i++) {
+          questions[i].selectedAnswer = null;
+        }// Reset page number
       });
     }
   }
@@ -125,7 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 30,
           ),
 
-          Text("($questionNumber/${questions.length})"),
+          Text(
+              "($questionNumber/${questions.length})"),
 
         ],
       ),

@@ -21,10 +21,10 @@ class DisplayScoer extends StatelessWidget{
         height: 114,
         width: 234,
         decoration: BoxDecoration(
-            color: ColorStatic.colorGroundContainerInShowDialog,
+            color: ColorApp.colorGroundContainerInShowDialog,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
-              color: ColorStatic.primaryColor,
+              color: ColorApp.primaryColor,
               width: 0.5,
             )
         ),
@@ -35,7 +35,7 @@ class DisplayScoer extends StatelessWidget{
             const Text(TextStatic.resultTextInShowDialog,
               style: TextStyle(
                 fontFamily: FontFamily.almaraiFont,
-                color: ColorStatic.colorResultTextInShowDialog,
+                color: ColorApp.colorResultTextInShowDialog,
                 fontSize: 16,
               ),
             ),
@@ -48,7 +48,7 @@ class DisplayScoer extends StatelessWidget{
               style: const TextStyle(
                 fontFamily: FontFamily.almaraiFont,
                 fontSize: 18,
-                color:ColorStatic.primaryColor,
+                color:ColorApp.primaryColor,
               ),
             ),
           ],

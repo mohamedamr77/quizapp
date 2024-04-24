@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../core/TextCore.dart';
 import '../../core/colorcore.dart';
 import '../../core/fontcore.dart';
 

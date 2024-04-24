@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 import '../../core/colorcore.dart';
 
 class DividerLine extends StatelessWidget{

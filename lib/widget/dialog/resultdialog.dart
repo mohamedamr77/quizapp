@@ -5,7 +5,6 @@ import '../../core/colorcore.dart';
 import '../../core/fontcore.dart';
 import 'buttoncheckanswerinshowdialog.dart';
 import 'buttonexamrepetitioninshowdialog.dart';
-import 'containerDisplayResult.dart';
 class ResultDialog extends StatelessWidget{
   void Function()? onTapCheckAnswerButton;
   void Function()? onTapRepetitionQuestionButton;

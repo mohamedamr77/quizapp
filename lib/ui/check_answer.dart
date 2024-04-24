@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../core/colorcore.dart';
 import '../widget/checkanswerwidget/check_answer_item.dart';

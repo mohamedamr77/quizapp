@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:quizapp/ui/check_answer.dart';
 import 'package:quizapp/widget/dialog/resultdialog.dart';
 import 'package:quizapp/widget/homepage/questiontext.dart';
 import 'package:quizapp/widget/homepage/divider.dart';

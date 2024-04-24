@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:quizapp/widget/dialog/resultdialog.dart';
 import 'package:quizapp/widget/homepage/questiontext.dart';
@@ -9,8 +8,6 @@ import '../widget/homepage/containerasappbar.dart';
 import '../widget/homepage/elevatedButton.dart';
 import '../widget/list_quiz_data..dart';
 import '../widget/quiz_variables.dart';
-
-
 class HomeScreen extends StatefulWidget {
   final bool resetQuestions;
   const HomeScreen({Key? key, this.resetQuestions = false}) : super(key: key);
@@ -39,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     if (widget.resetQuestions) {
       setState(() {
+        score=0;
         questionIndex = 0; // Reset question index to 0
         questionNumber = 1;
         for (int i = 0; i < questions.length; i++) {
